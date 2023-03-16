@@ -8,137 +8,145 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-
-    <style>
-        body {
-            background-color: #f7f7f7;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-
-        #Titleinstructions {
-            color: rgb(4, 197, 250);
-            margin-bottom: 18px;
-            font-size: 20px;
-            line-height: 1.5;
-            text-align: center;
-            margin-top: 20px;
-
-        }
-
-        #bushes,
-        #penalty,
-        #click {
-            font-size: 14px;
-            font-weight: bold;
-            margin: 10px;
-            padding: 12px;
-            border: 2px solid #333;
-            border-radius: 10px;
-            display: inline-block;
-            background-color: rgb(226, 239, 243);
-            color: rgb(3, 27, 29);
-
-
-        }
-
-        #help {
-
-            margin-top: 22px;
-            display: inline;
-            border: 2px solid black;
-            border-radius: 12px;
-            width: 50%;
-            background-color: rgb(204, 236, 247);
-            padding: 10px;
-            text-align: left;
-            color: rgb(254, 0, 8);
-
-        }
-
-        #help:hover {
-            color: #f00c0c;
-            cursor: pointer;
-        }
-
-        .container {
-			display: grid;
-			grid-template-columns: repeat(6, 1fr);
-			grid-template-rows: repeat(4, 1fr);
-			gap: 10px;
-			padding: 10px;
-		}
-
-		.search-location {
-			border: 1px solid black;
-			padding: 5px;
-		}
-    
-
-       
-    </style>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-
-
     <h1>Find the mouse by Purna Chandra Satish Pinnamani</h1>
-    <p id="Titleinstructions">Click on the bushes to search for the mouse, beware the cat</p>
-    <p id="bushes">Number of bushes checked is zero</p>
-    <p id="penalty">Penalty is zero</p>
-    <p id="click">Click for help</p>
-    <p id="help">Help report</p>
+    <div class="container border bg-info" style="padding-top: 10px; color: white;">
+        <p>Click on the bushes to search for the mouse, beware the cat</p>
+    </div>
+    <div class="container border bg-primary" id="bushes" style="padding-top: 10px; color: white;">
+        <p>Number of bushes checked is zero</p>
+    </div>
+    <div class="container border bg-danger" id="penalty" style="padding-top: 10px; color: white;">
+        <p>Penalty is zero</p>
+    </div>
+    <div class="container border bg-success" style="padding-top: 10px; color: white;">
+        <p onclick="help()">Click for help</p>
+    </div>
+    <div class="container border bg-secondary" id="help" style="padding-top: 10px; color: white;">
+        <p>Help report</p>
+    </div><br>
+    
+    <br>
+
 
     <div class="container">
-        <div class="row">
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>   
+        <div class="image-row d-flex">
+            <div>
+                <img id="sp0" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(0)">
+                <img id="sp1" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(1)">
+                <img id="sp2" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(2)">
+                <img id="sp3" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(3)">
+                <img id="sp4" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(4)">
+                <img id="sp5" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(5)">
+            </div>
         </div>
-        <div class="row">
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>   
+        <div class="image-row d-flex">
+            <div>
+                <img id="sp6" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(6)">
+                <img id="sp7" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(7)">
+                <img id="sp8" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(8)">
+                <img id="sp9" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(9)">
+                <img id="sp10" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(10)">
+                <img id="sp11" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(11)">
+            </div>
         </div>
-        <div class="row">
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>   
+        <div class="image-row d-flex">
+            <div>
+                <img id="sp12" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(12)">
+                <img id="sp13" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(13)">
+                <img id="sp14" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(14)">
+                <img id="sp15" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(15)">
+                <img id="sp16" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(16)">
+                <img id="sp17" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(17)">
+            </div>
         </div>
-        <div class="row">
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>   
+        <div class="image-row d-flex">
+            <div>
+                <img id="sp18" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(18)">
+                <img id="sp19" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(19)">
+                <img id="sp20" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(20)">
+                <img id="sp21" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(21)">
+                <img id="sp22" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(22)">
+                <img id="sp23" src="bush.jpg" alt="Bushes" height="125" width="125" onclick="check(23)">
+            </div>
         </div>
-        <div class="row">
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>   
-        </div>
-        <div class="row">
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>
-            <div class="search-location"><img src="Bush.jpg" width="100" height="100"></div>   
-        </div>
-       </div>
+    </div>
+    <script>
+        var ids = ["sp0", "sp1", "sp2", "sp3", "sp4", "s5", "sp6", "sp7", "sp8", "sp9", "sp10",
+            "sp11", "sp12", "sp13", "sp14", "sp15", "sp16", "sp17", "sp18", "sp19", "sp20", "sp21", "sp22", "sp23"]
+        var checkCount = 0
+        var penalty = 0
+        var lastCheck = 0
+        var mouseLocation = 13
+        var catLocation = 21
+        let gameOver = false
+        function check(position) {
+            if (gameOver) {
+                return;
+            }
+            var id = ids[position]
+            img = document.getElementById(id);
+            if (position == mouseLocation) {
+                img.src = "mouse.jpg";
+                gameOver = true;
+                penalty -= 3;
 
-    
+            }
+            else if (position == catLocation) {
+                img.src = "tiger.png";
+                gameOver = true;
+                penalty += 4;
+            }
+            else {
+                img.src = "grass.jpg";
+            }
+            checkCount = checkCount + 1;
+            penalty = penalty + 1;
+
+            document.getElementById("bushes").innerHTML = "Number of bushes checked is: " + checkCount;
+            document.getElementById("penalty").innerHTML = "penalty is: " + penalty;
+            lastCheck = position;
+        }
+        function help() {
+            console.log(lastCheck)
+            const catRow = Math.floor(catLocation / 4);
+            const catColumn = catLocation % 6;
+            const mouseRow = Math.floor(mouseLocation / 4);
+            const mouseColumn = mouseLocation % 6;
+            const lastRow = Math.floor(lastCheck / 4);
+            const lastColumn = lastCheck % 6;
+            console.log(catRow)
+            console.log(catColumn)
+            console.log(mouseRow)
+            console.log(mouseColumn)
+            console.log(lastRow)
+            console.log(lastColumn)
+            penalty = penalty + 2;
+            document.getElementById("penalty").innerHTML = "Penalty is " + penalty;
+
+            if ((Math.abs(catRow - lastRow) <= 1 && Math.abs(catColumn - lastColumn) <= 1) && (Math.abs(catRow - mouseRow) > 1 || Math.abs(catColumn - mouseColumn) > 1)) {
+                document.getElementById("help").innerHTML = "meow";
+            }
+
+            else if ((Math.abs(mouseRow - lastRow) <= 1 && Math.abs(mouseColumn - lastColumn) <= 1) && (Math.abs(catRow - mouseRow) > 1 || Math.abs(catColumn - mouseColumn) > 1)) {
+                document.getElementById("help").innerHTML = "squeak";
+            }
+            else {
+                document.getElementById("help").innerHTML = "sorry, no help available";
+            }
+        }
+
+    </script>
+
 
 </body>
 
